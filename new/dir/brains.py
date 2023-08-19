@@ -1,7 +1,8 @@
 class Brain:
     def __init__(self, name, personality):
         """Constructor initializes state"""
-        pass
+        self.name = name
+        self.personality = personality
 
     def generate_response(self, message):
         """Generate a text response to the message"""

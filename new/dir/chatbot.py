@@ -1,7 +1,8 @@
 class Chatbot:
     def __init__(self, brains, logger):
         """Constructor initializes brains and logger"""
-        pass
+        self.brains = brains
+        self.logger = logger
 
     def send_message(self, message):
         """Send user message, call API, return response"""
