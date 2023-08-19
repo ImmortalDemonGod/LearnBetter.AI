@@ -1,0 +1,20 @@
+# General libraries
+numpy
+pandas
+
+# Machine learning libraries
+scikit-learn
+tensorflow
+
+# Natural language processing libraries
+nltk
+spacy
+
+# Web scraping libraries
+beautifulsoup4
+requests
+
+# Database libraries
+sqlalchemy
+
+# Note: Replace the libraries above with the ones used in your project and specify the correct versions.

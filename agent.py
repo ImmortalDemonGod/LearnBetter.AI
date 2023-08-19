@@ -56,11 +56,7 @@ def parse_function_response(message):
     return function_name, function_response
 
 
-def run_conversation(message, messages=[], f=None):
-    print(f"Using brain id: {args.brain_id}")
-    messages.append(message)
 
-    # Call check_token_count before generating a response
 def run_conversation(message, messages=[], f=None, brains_enum=[]):
     print(f"Using brain id: {args.brain_id}")
     messages.append(message)
