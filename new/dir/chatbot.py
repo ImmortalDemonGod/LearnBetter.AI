@@ -35,12 +35,14 @@ class Chatbot:
 
     def select_brain(self, message: Message):
         """Choose the most appropriate brain for the message"""
-        # For now, we'll just return the first brain in the list
-        # In the future, this method should analyze the message and select the most appropriate brain
+        # For now, we'll select the brain based on the content of the message
+        for brain in self.brains:
+            if brain.name in message.content:
+                return brain
+        # If no specific brain is mentioned in the message, return the first brain in the list
         return self.brains[0]
 
     def summarize_conversation(self):
         """Summarize the conversation history"""
-        # For now, we'll just return a hardcoded summary
-        # In the future, this method should generate a summary of the conversation history
-        return "Summary of the conversation"
+        # For now, we'll return the last few messages in the conversation
+        return '\n'.join(message.content for message in self.logger.get_last_messages(5))
