@@ -5,4 +5,6 @@ class GPT:
 
     def generate_response(self, message):
         """Generate a text response to the message"""
-        pass
+        # For now, we'll just return a hardcoded response
+        # In the future, this method should call the GPT-3 API and return the generated response
+        return "Hello, I'm your chatbot!"
