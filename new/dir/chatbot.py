@@ -4,8 +4,8 @@ class Chatbot:
         self.brains = brains
         self.logger = logger
 
-    def send_message(self, message):
-        """Send user message, call API, return response"""
+    def generate_response(self, message):
+        """Generate a response to the given message"""
         # Select the appropriate brain for the message
         brain = self.select_brain(message)
         # Generate the response using the selected brain
