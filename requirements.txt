@@ -5,12 +5,9 @@ json
 os
 nltk
 datetime
-gpt_functions
-knowledgeDB_search
 pyperclip
 typing
-langchain.embeddings
-langchain.docstore.document
+langchain
 gotrue
 supabase
 logging

@@ -1,0 +1,60 @@
+- Code Structure 
+    - Split the code into modules with these high-level dependencies:
+        - main.py - CLI parsing -> chatbot.py -> gpt.py - GPT-3 API calls -> brains.py - Brain subclasses -> logger.py
+            - main.py: Handles CLI arguments and initiates the chatbot.
+            - chatbot.py: Defines the Chatbot class that manages the conversation flow.
+            - gpt.py: Provides a wrapper for GPT-3 API calls.
+            - brains.py: Contains Brain subclasses, each responsible for different capabilities.
+            - logger.py: Implements the Logger class to save conversation history.
+- Object-Oriented Design
+    - Chatbot Class
+        - class Chatbot:
+    def __init__(self, brains, logger):
+        """Constructor initializes brains and logger"""
+        
+    def send_message(self, message):
+        """Send user message, call API, return response"""
+        
+    def select_brain(self, message):
+        """Choose the most appropriate brain for the message"""
+        - 
+    - Brain Class
+        - class Brain:
+    def __init__(self, name, personality):
+        """Constructor initializes state"""
+        
+    def generate_response(self, message):
+        """Generate a text response to the message"""
+- Input Validation
+    - Ensure function arguments are validated using pydantic:
+    - from pydantic import BaseModel
+  
+class Message(BaseModel):
+      content: str
+  
+def process(msg: Message):
+      # Function logic
+- Token Budgeting 
+    - Set the per-turn token budget limit to 4000.
+    - Utilize summarization when the token limit is reached.
+    - Optionally, consider mentioning response filtering to reduce inappropriate/unhelpful responses.
+- Testing
+    - Implement unit tests for critical functions.
+    - Mock GPT-3 API calls for efficient testing.
+    - Conduct end-to-end tests to cover full conversation flows.
+- Instrumentation
+    - Log API errors along with tracebacks.
+    - Implement a mechanism to send logs to a centralized system for better monitoring.
+- Best Practices
+    - Adopt descriptive naming conventions for variables and functions.
+    - Follow PEP8 style guidelines for consistent code formatting.
+    - Promote modularization by creating simple, single-purpose functions.
+    - Include suggestions for using immutable data structures and linting/formatting tools.
+- Documentation
+    - Document the system's architecture and the responsibilities of each module.
+    - Provide clear usage instructions in the README for developers and users.
+- Additional Adjustments 
+    - Emphasize the importance of unit tests covering core logic and end-to-end tests validating full conversation flows.
+    - Include suggestions for using immutable data structures and linting/formatting tools in the best practices section.
+    - Explicitly state that the final code version should be designed to avoid global state and mutable data.
+    - Consider including a brief mention of response filtering in the token budgeting section without making it a strict requirement.
