@@ -1,20 +1,17 @@
-# General libraries
-numpy
-pandas
-
-# Machine learning libraries
-scikit-learn
-tensorflow
-
-# Natural language processing libraries
+# Libraries used in the project
+argparse
+openai
+json
+os
 nltk
-spacy
-
-# Web scraping libraries
-beautifulsoup4
-requests
-
-# Database libraries
-sqlalchemy
-
-# Note: Replace the libraries above with the ones used in your project and specify the correct versions.
+datetime
+gpt_functions
+knowledgeDB_search
+pyperclip
+typing
+langchain.embeddings
+langchain.docstore.document
+gotrue
+supabase
+logging
+dotenv
