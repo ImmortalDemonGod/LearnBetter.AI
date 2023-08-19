@@ -1,16 +1,19 @@
 class Chatbot:
-    def __init__(self, brains, logger):
-        """Constructor initializes brains and logger"""
+    def __init__(self, brains, logger, gpt):
+        """Constructor initializes brains, logger, and GPT"""
         self.brains = brains
         self.logger = logger
+        self.gpt = gpt
 
-    def generate_response(self, message):
-        """Generate a response to the given message"""
+    def send_message(self, message):
+        """Send user message, call API, return response"""
         # Select the appropriate brain for the message
         brain = self.select_brain(message)
         # Generate the response using the selected brain
         response = brain.generate_response(message)
-        return response
+        # Send the response to the GPT-3 model to generate the final response
+        final_response = self.gpt.generate_response(response)
+        return final_response
 
     def select_brain(self, message):
         """Choose the most appropriate brain for the message"""
